@@ -27,9 +27,6 @@ namespace WPFUserInterface
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>();
 
-            _container
-                .PerRequest<ICalculations, Calculations>();
-
             GetType().Assembly.GetTypes()
                 .Where(type => type.IsClass)
                 .Where(type => type.Name.EndsWith("ViewModel"))
